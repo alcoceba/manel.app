@@ -1,0 +1,40 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/functions.scss' as func;
+
+.Link {
+  display: inline-block;
+  padding: 5px 0;
+  border-radius: 1rem;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: func.color-level(vars.$primary, 3);
+  transition: all vars.$transition-base;
+
+  &--hover {
+    &:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 1px;
+      margin: 5px auto 0;
+      background: vars.$primary;
+      transition: width vars.$transition-base;
+    }
+
+    &:hover {
+      color: vars.$primary;
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  &--scale {
+    transition: all vars.$transition-fast-base;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

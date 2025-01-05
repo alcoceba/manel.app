@@ -1,0 +1,16 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/functions.scss' as func;
+
+.LinkGroup {
+  display: flex;
+
+  &__horizontal {
+    flex-wrap: wrap;
+    gap: 0 .5rem;
+  }
+
+  &__vertical {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

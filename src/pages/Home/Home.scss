@@ -1,0 +1,56 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/functions.scss' as func;
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 .5rem;
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    width: calc(100% + 1rem);
+    padding: .75rem 0;
+    margin: 0 -.5rem;
+    background-color: func.color-level(vars.$primary, 3);
+    color: vars.$secondary;
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: .5rem 1rem;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 .5rem;
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__center {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+
+    span {
+      font-size: 1.3rem;
+      color: vars.$yellow;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+}
