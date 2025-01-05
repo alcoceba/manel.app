@@ -1,7 +1,6 @@
 import './Home.scss';
 
 import { Icons } from '../../components/Icon/Icons';
-import Link from '../../components/Link/Link';
 import LinkGroup from '../../components/LinkGroup/LinkGroup';
 import LinkIcon from '../../components/LinkIcon/LinkIcon';
 
