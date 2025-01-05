@@ -4,17 +4,22 @@
 @forward './styles/reset.scss';
 
 :root {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   font-family: vars.$font-family;
   font-weight: 400;
 
   height: 100%;
   color: vars.$primary;
-  background: linear-gradient(90deg, vars.$secondary 40%, func.color-level(vars.$purple, 9) 99.6%) center 3px;
+  background: linear-gradient(
+      90deg,
+      vars.$secondary 40%,
+      func.color-level(vars.$purple, 9) 99.6%
+    )
+    center 3px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
+  -moz-osx-font-smoothing: grayscale;
 }

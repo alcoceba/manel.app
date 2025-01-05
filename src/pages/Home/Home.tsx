@@ -1,21 +1,16 @@
 import './Home.scss';
 
-import { Icons } from '../../components/Icon/Icons';
+import { Icons } from '../../components/Icon';
 import LinkGroup from '../../components/LinkGroup/LinkGroup';
 import LinkIcon from '../../components/LinkIcon/LinkIcon';
 
 function Home() {
   return (
     <div className="App">
-
       <header className="App__top">
         <div className="App__top__content">
-          <h1>
-            I'm Manel
-          </h1>
-          <p>
-            Front-end Engineer
-          </p>
+          <h1>I'm Manel</h1>
+          <p>Front-end Engineer</p>
         </div>
       </header>
 
@@ -27,7 +22,6 @@ function Home() {
 
       <div className="App__bottom">
         <LinkGroup>
-
           <LinkIcon
             icon={Icons.LinkedIn}
             title="Go to Linked In / alcoceba"
@@ -50,7 +44,6 @@ function Home() {
             url="https://app.daily.dev/alcoceba/"
             target="_blank"
             hoverEffect="scale"
-
           />
 
           <LinkIcon
@@ -62,8 +55,7 @@ function Home() {
           />
         </LinkGroup>
       </div>
-
-    </div >
+    </div>
   );
 }
 
