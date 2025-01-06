@@ -1,7 +1,7 @@
 @use '../../styles/variables.scss' as vars;
 @use '../../styles/functions.scss' as func;
 
-$padding-x: 0.75rem;
+$padding-x: 2rem;
 
 .App {
   display: flex;
@@ -14,7 +14,7 @@ $padding-x: 0.75rem;
     display: flex;
     justify-content: center;
     width: calc(100% + $padding-x * 2);
-    padding: 0.75rem 0;
+    padding: 1rem 0;
     margin: 0 #{-$padding-x};
     background: linear-gradient(
         90deg,
@@ -25,6 +25,7 @@ $padding-x: 0.75rem;
     color: vars.$secondary;
 
     @media (min-width: 768px) {
+      padding: 0.75rem 0;
       background: linear-gradient(
           90deg,
           vars.$secondary 0%,
