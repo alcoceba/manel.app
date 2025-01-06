@@ -2,36 +2,71 @@
 @use '../../styles/functions.scss' as func;
 
 .Link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 5px 0;
   border-radius: 1rem;
   text-decoration: none;
-  text-transform: lowercase;
   color: func.color-level(vars.$primary, 3);
   transition: all vars.$transition-base;
 
+  &__icon {
+    margin-right: 0.5rem;
+  }
+
   &--hover {
-    &:after {
+    color: func.color-level(vars.$yellow, 3);
+    text-decoration: none;
+    position: relative;
+
+    &::before,
+    &::after {
       content: '';
-      display: block;
-      width: 0;
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
       height: 1px;
-      margin: 5px auto 0;
-      background: vars.$primary;
-      transition: width vars.$transition-base;
+      background: linear-gradient(
+        90deg,
+        vars.$primary 0%,
+        vars.$yellow 60%,
+        transparent 100%
+      );
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform vars.$transition-base;
     }
 
     &:hover {
-      color: vars.$primary;
+      &::before,
+      &::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
 
-      &:after {
-        width: 100%;
+    &::before {
+      top: 0;
+      bottom: unset;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        vars.$yellow 40%,
+        vars.$primary 100%
+      );
+      transform-origin: bottom left;
+    }
+
+    &:hover {
+      &::before {
+        transform-origin: bottom right;
       }
     }
   }
 
   &--scale {
-    opacity: .9;
+    opacity: 0.9;
     transition: all vars.$transition-fast-base;
 
     &:hover {

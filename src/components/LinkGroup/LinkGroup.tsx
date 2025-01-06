@@ -10,9 +10,7 @@ interface LinkGroupProps {
 function LinkGroup({ type = 'horizontal', children }: LinkGroupProps) {
   return (
     <div className={`LinkGroup LinkGroup__${type}`}>
-      {children.filter(React.isValidElement).map(child => (
-        <div className="LinkGroup__element">{child}</div>
-      ))}
+      {children.filter(React.isValidElement)}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import './Home.scss';
 
 import { Icons } from '../../components/Icon';
+import Link from '../../components/Link/Link';
 import LinkGroup from '../../components/LinkGroup/LinkGroup';
-import LinkIcon from '../../components/LinkIcon/LinkIcon';
 
 function Home() {
   return (
@@ -21,39 +21,56 @@ function Home() {
       </div>
 
       <div className="App__bottom">
-        <LinkGroup>
-          <LinkIcon
+        <LinkGroup type="vertical">
+          <Link
             icon={Icons.LinkedIn}
             title="Go to Linked In / alcoceba"
             url="https://www.linkedin.com/in/alcoceba/"
             target="_blank"
             hoverEffect="scale"
-          />
+          >
+            LinkedIn
+          </Link>
 
-          <LinkIcon
+          <Link
             icon={Icons.GitHub}
             title="Go to GitHub / alcoceba"
             url="https://github.com/alcoceba/"
             target="_blank"
             hoverEffect="scale"
-          />
+          >
+            GitHub
+          </Link>
 
-          <LinkIcon
+          <Link
             icon={Icons.DailyDev}
             title="Go to daily.dev / alcoceba"
             url="https://app.daily.dev/alcoceba/"
             target="_blank"
             hoverEffect="scale"
-          />
+          >
+            daily.dev
+          </Link>
 
-          <LinkIcon
+          <Link
             icon={Icons.StackOverflow}
             title="Go to Stack Overflow / alcoceba"
             url="https://stackoverflow.com/users/1398978/alcoceba/"
             target="_blank"
             hoverEffect="scale"
-          />
+          >
+            StackOverflow
+          </Link>
         </LinkGroup>
+
+        <div className="App__center">
+          <p>
+            <Link title="Go to Stack Overflow / alcoceba" url="/">
+              Click here
+            </Link>{' '}
+            to get to know me better.
+          </p>
+        </div>
       </div>
     </div>
   );
