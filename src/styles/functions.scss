@@ -1,4 +1,5 @@
 @use './variables.scss' as vars;
+@use 'sass:color';
 
 // Request a color level
 
@@ -6,5 +7,5 @@
   $color-base: if($level > 0, vars.$black, vars.$white);
   $level: abs($level);
 
-  @return mix($color-base, $color, $level * vars.$color-interval);
+  @return color.mix($color-base, $color, $level * vars.$color-interval);
 }

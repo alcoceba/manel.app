@@ -32,7 +32,7 @@ function Home() {
 
           <LinkIcon
             icon={Icons.GitHub}
-            title="Go to github / alcoceba"
+            title="Go to GitHub / alcoceba"
             url="https://github.com/alcoceba/"
             target="_blank"
             hoverEffect="scale"
@@ -48,7 +48,7 @@ function Home() {
 
           <LinkIcon
             icon={Icons.StackOverflow}
-            title="Go to stackoverflow / alcoceba"
+            title="Go to Stack Overflow / alcoceba"
             url="https://stackoverflow.com/users/1398978/alcoceba/"
             target="_blank"
             hoverEffect="scale"

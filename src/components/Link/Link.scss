@@ -31,10 +31,12 @@
   }
 
   &--scale {
+    opacity: .9;
     transition: all vars.$transition-fast-base;
 
     &:hover {
-      transform: scale(1.1);
+      opacity: 1;
+      transform: scale(1.2);
     }
   }
 }
