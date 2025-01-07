@@ -3,78 +3,22 @@
 
 $padding-x: 2rem;
 
-.App {
+.Home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
   padding: 0 $padding-x;
+  line-height: 1.6;
 
-  &__top {
-    display: flex;
-    justify-content: center;
-    width: calc(100% + $padding-x * 2);
-    padding: 1rem 0;
-    margin: 0 #{-$padding-x};
-    background: linear-gradient(
-        90deg,
-        vars.$primary 0%,
-        func.color-level(vars.$purple, 9) 100%
-      )
-      center 3px;
-    color: vars.$secondary;
-
-    @media (min-width: 768px) {
-      padding: 0.75rem 0;
-      background: linear-gradient(
-          90deg,
-          vars.$secondary 0%,
-          vars.$primary 38%,
-          func.color-level(vars.$purple, 9) 100%
-        )
-        center 3px;
-    }
-
-    &__content {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: baseline;
-      gap: 0.5rem 1rem;
-      width: 100%;
-      max-width: 500px;
-      margin: 0 $padding-x;
-
-      @media (min-width: 768px) {
-        flex-direction: row;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-    }
+  &__icon {
+    font-size: 1.3rem;
+    color: vars.$yellow;
   }
 
-  &__center {
+  &__section {
     width: 100%;
     max-width: 500px;
-    margin: 2rem auto;
-    line-height: 1.3rem;
-
-    span {
-      font-size: 1.3rem;
-      color: vars.$yellow;
-    }
-  }
-
-  &__bottom {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 2rem;
+    margin: 2rem auto 0;
   }
 }

@@ -1,26 +1,24 @@
 import './Home.scss';
 
+import Headline from '../../components/Headline/Headline';
 import { Icons } from '../../components/Icon';
 import Link from '../../components/Link/Link';
 import LinkGroup from '../../components/LinkGroup/LinkGroup';
 
 function Home() {
   return (
-    <div className="App">
-      <header className="App__top">
-        <div className="App__top__content">
-          <h1>I'm Manel</h1>
-          <p>Front-end Engineer</p>
-        </div>
+    <div className="Home">
+      <header className="Home__top">
+        <Headline title="I'm Manel" subtitle="Front-end Engineer" />
       </header>
 
-      <div className="App__center">
+      <section className="Home__section">
         <p>
-          Sunny days <span>&#9788;</span> make me happy.
+          Sunny days <span className="Home__icon">&#9788;</span> make me happy.
         </p>
-      </div>
+      </section>
 
-      <div className="App__bottom">
+      <section className="Home__section">
         <LinkGroup type="vertical">
           <Link
             icon={Icons.LinkedIn}
@@ -62,16 +60,16 @@ function Home() {
             StackOverflow
           </Link>
         </LinkGroup>
+      </section>
 
-        <div className="App__center">
-          <p>
-            <Link title="Go to Stack Overflow / alcoceba" url="/">
-              Click here
-            </Link>{' '}
-            to get to know me better.
-          </p>
-        </div>
-      </div>
+      <section className="Home__section">
+        <p>
+          <Link title="Want to know how can I help you?" url="/about">
+            Click here
+          </Link>{' '}
+          to get to know me better.
+        </p>
+      </section>
     </div>
   );
 }

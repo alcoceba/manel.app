@@ -2,6 +2,7 @@ import './Link.scss';
 
 import { IconProps } from '../Icon/Icon';
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 export interface LinkProps {
   icon?: React.FC<IconProps>;
@@ -26,9 +27,9 @@ function Link({
   const defaultAriaLabel = title || 'Link icon';
 
   return (
-    <a
+    <RouterLink
       className={`Link Link--${hoverEffect}`}
-      href={url}
+      to={url}
       title={title}
       target={target}
       rel={rel}
@@ -40,7 +41,7 @@ function Link({
         </div>
       )}
       {children}
-    </a>
+    </RouterLink>
   );
 }
 
