@@ -1,0 +1,53 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/functions.scss' as func;
+
+.Base {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 vars.$layout-padding-x;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  &__section {
+    margin: auto 0;
+  }
+
+  footer {
+    position: relative;
+    width: 100%;
+    max-width: vars.$layout-max-width;
+    margin: 3.5rem auto 1rem;
+    line-height: 1.1;
+    font-size: 0.8rem;
+    text-align: left;
+    opacity: 0.5;
+    transition: opacity vars.$transition-base;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::before {
+      position: absolute;
+      top: -8px;
+      content: ' ';
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        vars.$primary 0%,
+        vars.$yellow 60%,
+        transparent 100%
+      );
+    }
+  }
+}

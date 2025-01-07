@@ -15,9 +15,9 @@
   }
 
   &--hover {
+    position: relative;
     color: func.color-level(vars.$yellow, 3);
     text-decoration: none;
-    position: relative;
 
     &::before,
     &::after {

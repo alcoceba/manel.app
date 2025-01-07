@@ -49,7 +49,10 @@ $border-base: $border-width solid $border-color;
 
 $font-family-consolas: 'Courier New', Courier, monospace;
 $font-family-regular: Helvetica, Arial, 'sans-serif';
-
 $font-family: $font-family-consolas;
+
 $transition-base: 0.2s ease-in-out;
 $transition-fast-base: 0.1s ease-in-out;
+
+$layout-padding-x: 2rem;
+$layout-max-width: 500px;

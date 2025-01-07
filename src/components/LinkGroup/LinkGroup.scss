@@ -3,7 +3,6 @@
 
 .LinkGroup {
   display: flex;
-  line-height: 1;
 
   &__horizontal {
     flex-wrap: wrap;
@@ -11,6 +10,7 @@
   }
 
   &__vertical {
+    line-height: 1;
     flex-direction: column;
     align-items: flex-start;
   }

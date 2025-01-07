@@ -1,16 +1,7 @@
 @use '../../styles/variables.scss' as vars;
 @use '../../styles/functions.scss' as func;
 
-$padding-x: 2rem;
-
 .Home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  padding: 0 $padding-x;
-  line-height: 1.6;
-
   &__icon {
     font-size: 1.3rem;
     color: vars.$yellow;
@@ -18,7 +9,7 @@ $padding-x: 2rem;
 
   &__section {
     width: 100%;
-    max-width: 500px;
+    max-width: vars.$layout-max-width;
     margin: 2rem auto 0;
   }
 }
