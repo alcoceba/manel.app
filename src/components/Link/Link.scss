@@ -5,13 +5,15 @@
   display: inline-flex;
   align-items: center;
   padding: 5px 0;
-  border-radius: 1rem;
   text-decoration: none;
-  color: func.color-level(vars.$primary, 3);
+  color: vars.$primary;
   transition: all vars.$transition-base;
 
   &__icon {
+    border-radius: 10px;
+    background: vars.$primary;
     margin-right: 0.5rem;
+    transition: all vars.$transition-base;
   }
 
   &--hover {
@@ -35,7 +37,7 @@
       );
       transform: scaleX(0);
       transform-origin: bottom right;
-      transition: transform vars.$transition-base;
+      transition: all vars.$transition-base;
     }
 
     &:hover {
@@ -71,7 +73,10 @@
 
     &:hover {
       opacity: 1;
-      transform: scale(1.1);
+
+      @media (hover: hover) {
+        padding-left: 0.3rem;
+      }
     }
   }
 }

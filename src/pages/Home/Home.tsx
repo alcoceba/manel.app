@@ -13,12 +13,6 @@ function Home() {
       </header>
 
       <section className="Home__section">
-        <p>
-          Sunny days <span className="Home__icon">&#9788;</span> make me happy.
-        </p>
-      </section>
-
-      <section className="Home__section">
         <LinkGroup type="vertical">
           <Link
             icon={Icons.LinkedIn}

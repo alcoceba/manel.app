@@ -1,3 +1,5 @@
+import './Icon.scss';
+
 import React from 'react';
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -7,21 +9,22 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 const Icon: React.FC<IconProps> = ({
-  size = 24,
-  color = 'currentColor',
+  size = 20,
+  color = '#343a40',
   children,
   ...props
 }) => (
-  <svg
-    width={size}
-    height={size}
-    fill={color}
-    stroke={color}
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    {children}
-  </svg>
+  <div className="Icon" style={{ width: size, height: size }}>
+    <svg
+      width={size}
+      height={size}
+      fill={color}
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      {children}
+    </svg>
+  </div>
 );
 
 export default Icon;

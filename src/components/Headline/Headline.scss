@@ -20,7 +20,7 @@
     background: linear-gradient(
         90deg,
         vars.$secondary 0%,
-        func.color-level(vars.$primary, 3) 38%,
+        func.color-level(vars.$primary, 2) 38%,
         func.color-level(vars.$purple, 9) 100%
       )
       center 3px;

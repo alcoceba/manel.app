@@ -36,15 +36,15 @@ function About() {
         <br />
 
         <LinkGroup>
+          <Link title="Go back" url="/">
+            Go back
+          </Link>
           <Link
             title="Go to linkedin / alcoceba"
             url="https://www.linkedin.com/in/alcoceba/"
             target="_blank"
           >
             Contact me!
-          </Link>
-          <Link title="Go back" url="/">
-            Go back
           </Link>
         </LinkGroup>
       </section>
