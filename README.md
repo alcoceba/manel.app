@@ -4,7 +4,7 @@ This is a simple static landing page built with **Vite**, **React** (Typescript)
 
 ## Live Demo
 
-You can check out the live version of the landing page at manel.app.
+You can check out the live version of the landing page at https://malcoceba.cat.
 
 ## Technologies
 
