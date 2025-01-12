@@ -3,7 +3,7 @@ import './Base.scss';
 import Link from '../../components/Link/Link';
 import React from 'react';
 
-export interface BaseProps extends React.SVGProps<SVGSVGElement> {
+interface BaseProps extends React.SVGProps<SVGSVGElement> {
   children: React.ReactNode;
 }
 

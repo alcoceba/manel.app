@@ -1,6 +1,6 @@
 import './Headline.scss';
 
-export interface HeadlineProps extends React.SVGProps<SVGSVGElement> {
+interface HeadlineProps extends React.SVGProps<SVGSVGElement> {
   title: string;
   subtitle?: string;
 }

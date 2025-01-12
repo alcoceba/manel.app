@@ -7,12 +7,13 @@ interface LinkGroupProps {
   type?: 'horizontal' | 'vertical';
 }
 
-function LinkGroup({ type = 'horizontal', children }: LinkGroupProps) {
-  return (
-    <div className={`LinkGroup LinkGroup__${type}`}>
-      {children.filter(React.isValidElement)}
-    </div>
-  );
-}
+const LinkGroup: React.FC<LinkGroupProps> = ({
+  type = 'horizontal',
+  children,
+}: LinkGroupProps) => (
+  <div className={`LinkGroup LinkGroup__${type}`}>
+    {children.filter(React.isValidElement)}
+  </div>
+);
 
 export default LinkGroup;

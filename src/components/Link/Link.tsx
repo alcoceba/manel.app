@@ -4,7 +4,7 @@ import { IconProps } from '../Icon/Icon';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-export interface LinkProps {
+interface LinkProps {
   icon?: React.FC<IconProps>;
   url: string;
   title: string;
@@ -14,7 +14,7 @@ export interface LinkProps {
   children?: React.ReactNode;
 }
 
-function Link({
+const Link: React.FC<LinkProps> = ({
   children,
   title,
   url,
@@ -22,7 +22,7 @@ function Link({
   target,
   ariaLabel,
   hoverEffect = 'hover',
-}: LinkProps) {
+}) => {
   const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
   const defaultAriaLabel = title || 'Link icon';
 
@@ -43,6 +43,6 @@ function Link({
       {children}
     </RouterLink>
   );
-}
+};
 
 export default Link;

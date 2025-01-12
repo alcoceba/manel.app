@@ -1,6 +1,6 @@
 # manel.app
 
-This is a simple static landing page built with **Vite**, **React** (Typescript), and **Sass**. It's designed to showcase a clean, minimalistic design suitable for personal or professional websites.
+This is a simple static landing page built with **Vite**, **React** (Typescript), and **Sass**. It's designed to showcase a clean, minimalistic design suitable for my personal website.
 
 ## Live Demo
 

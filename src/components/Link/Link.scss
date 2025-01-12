@@ -6,7 +6,7 @@
   align-items: center;
   padding: 5px 0;
   text-decoration: none;
-  color: vars.$primary;
+  color: vars.$yellow;
   transition: all vars.$transition-base;
 
   &__icon {
@@ -18,7 +18,6 @@
 
   &--hover {
     position: relative;
-    color: func.color-level(vars.$yellow, 3);
     text-decoration: none;
 
     &::before,
@@ -68,8 +67,13 @@
   }
 
   &--scale {
-    opacity: 0.9;
+    opacity: 0.7;
     transition: all vars.$transition-fast-base;
+    color: func.color-level(vars.$primary, 0);
+
+    .Link__icon {
+      background: func.color-level(vars.$primary, 0);
+    }
 
     &:hover {
       opacity: 1;
