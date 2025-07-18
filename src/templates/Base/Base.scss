@@ -29,11 +29,6 @@
     font-size: 0.8rem;
     text-align: left;
     opacity: 0.5;
-    transition: opacity vars.$transition-base;
-
-    &:hover {
-      opacity: 1;
-    }
 
     &::before {
       position: absolute;
@@ -45,7 +40,7 @@
       background: linear-gradient(
         90deg,
         vars.$primary 0%,
-        vars.$yellow 60%,
+        vars.$white 50%,
         transparent 100%
       );
     }

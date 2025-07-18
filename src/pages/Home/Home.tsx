@@ -43,16 +43,6 @@ function Home() {
           >
             daily.dev
           </Link>
-
-          <Link
-            icon={Icons.StackOverflow}
-            title="Go to Stack Overflow / alcoceba"
-            url="https://stackoverflow.com/users/1398978/alcoceba/"
-            target="_blank"
-            hoverEffect="scale"
-          >
-            StackOverflow
-          </Link>
         </LinkGroup>
       </section>
 

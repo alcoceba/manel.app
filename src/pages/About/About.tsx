@@ -13,27 +13,32 @@ function About() {
         <h2>
           Hi,
           <br />
-          I'm Manel Alcoceba 🙋‍♂️
+          I'm Manel 🙋‍♂️
         </h2>
 
-        <p>
-          I am a <u>Software Engineer</u> with a strong focus on{' '}
-          <u>front-end 🦄 technologies</u>, specializing in React, Next.js,
-          Node.js and other modern web tools, emphasizing development{' '}
-          <u>best practices</u>.
-        </p>
-        <p>
-          Over the years, I've embraced a front-end <u>tech lead</u> role in my
-          current company, contributing to the development of scalable and
-          efficient applications.
-        </p>
-        <p>
-          Passionate about innovation, continuous learning, and committed to
-          delivering <u>high-quality work</u>, I am always eager to take on{' '}
-          <u>new challenges</u> and explore <u>emerging technologies</u>. 🚀
-        </p>
+        <ul>
+          <li>
+            👨‍💻 Frontend <u>Tech Lead</u> & Software Engineer focused on{' '}
+            <u>React</u>, Next.js, and modern web tools.
+          </li>
+          <li>
+            💚 I care about <u>clean code</u> and building{' '}
+            <u>intuitive user interfaces</u> that live on the Internet.
+          </li>
 
-        <br />
+          <li>
+            🚀 Always curious and eager to learn — I enjoy{' '}
+            <u>discovering new things</u> and improving how I do my job.
+          </li>
+          <li>
+            🏃‍♂️ I like sports and nature — taking breaks helps me stay{' '}
+            <u>creative and focused</u>.
+          </li>
+          <li>
+            ☕️ <u>Open to connect</u> and <u>share ideas</u>, help with
+            challenges, or just talk about what you're working on.
+          </li>
+        </ul>
 
         <LinkGroup>
           <Link title="Go back" url="/">
