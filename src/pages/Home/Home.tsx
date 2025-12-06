@@ -48,7 +48,7 @@ function Home() {
 
       <section className="Home__section">
         <p>
-          <Link title="Want to know how can I help you?" url="/about">
+          <Link title="Want to know how can I help you?" url="https://www.linkedin.com/in/alcoceba">
             Click here
           </Link>{' '}
           to get to know me better.
