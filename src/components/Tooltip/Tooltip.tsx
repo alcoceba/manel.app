@@ -1,10 +1,10 @@
 import './Tooltip.scss';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 interface TooltipProps {
   text: string;
-  children: ReactNode;
+  children: React.ReactNode;
   position?: 'top' | 'bottom' | 'left' | 'right';
 }
 
