@@ -2,6 +2,16 @@
 @use './styles/functions.scss' as func;
 @forward './styles/reset';
 
+html {
+  background: linear-gradient(
+      90deg,
+      var(--secondary) 40%,
+      #{func.color-level(vars.$purple, 9)} 100%
+    )
+    center 3px;
+  background-attachment: fixed;
+}
+
 :root {
   // Greys
   --white: #{vars.$white};
