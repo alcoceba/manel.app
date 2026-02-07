@@ -1,11 +1,12 @@
 @use './variables.scss' as vars;
 @use 'sass:color';
+@use 'sass:math';
 
 // Request a color level
 
 @function color-level($color, $level: 0) {
-  $color-base: if(sass($level > 0): vars.$black; else: vars.$white);
-  $level: abs($level);
+  $color-base: if($level > 0, vars.$black, vars.$white);
+  $level: math.abs($level);
 
   @return color.mix($color-base, $color, $level * vars.$color-interval);
 }

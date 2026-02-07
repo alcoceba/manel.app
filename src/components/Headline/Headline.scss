@@ -1,53 +1,79 @@
-@use '../../styles/variables.scss' as vars;
-@use '../../styles/functions.scss' as func;
+@keyframes shadow-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 10px 40px var(--primary-opacity-08),
+      inset 0 1px 0 var(--white-opacity-10);
+  }
+
+  50% {
+    box-shadow:
+      0 15px 50px var(--primary-opacity-15),
+      inset 0 1px 0 var(--white-opacity-10);
+  }
+}
 
 .Headline {
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
-  margin: 2rem -#{vars.$layout-padding-x};
-  background: linear-gradient(
-      90deg,
-      vars.$primary 0%,
-      func.color-level(vars.$purple, 9) 100%
-    )
-    center 3px;
-  color: vars.$secondary;
+  padding: 1.5rem 0;
+  margin: 3rem 0 0;
+  background: transparent;
+  color: var(--secondary);
   line-height: 1;
 
-  @media (min-width: 768px) {
-    padding: 0.75rem 0;
-    background: linear-gradient(
-        90deg,
-        vars.$secondary 0%,
-        func.color-level(vars.$primary, 1) 30%,
-        func.color-level(vars.$white, 5) 50%,
-        func.color-level(vars.$white, 5) 100%
-      )
-      center 3px;
+  @media (width >= 768px) {
+    margin: 3rem -2rem 0;
   }
 
   &__content {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
     align-items: baseline;
-    gap: 0.5rem 1rem;
+    gap: 1rem;
     width: 100%;
-    max-width: vars.$layout-max-width;
-    margin: 0 vars.$layout-padding-x;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(
+      135deg,
+      var(--primary-opacity-04) 0%,
+      var(--secondary-opacity-02) 100%
+    );
+    border-radius: 0.75rem;
+    border: 1px solid var(--primary-opacity-03);
+    box-shadow:
+      0 10px 40px var(--primary-opacity-08),
+      inset 0 1px 0 var(--white-opacity-10);
+    backdrop-filter: none;
+    animation: shadow-glow 4s ease-in-out infinite;
 
-    @media (min-width: 768px) {
+    @media (width >= 768px) {
       flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      padding: 2.5rem 3rem;
     }
 
     h1 {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin: 0;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+
+      @media (width >= 768px) {
+        font-size: 2.75rem;
+      }
     }
 
     p {
-      font-size: 1rem;
+      margin: 0;
+      color: var(--white-opacity-70);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.85rem;
     }
 
     p:empty {

@@ -10,21 +10,25 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
 
 const Icon: React.FC<IconProps> = ({
   size = 20,
-  color = '#343a40',
+  color,
   children,
   ...props
-}) => (
-  <div className="Icon" style={{ width: size, height: size }}>
-    <svg
-      width={size}
-      height={size}
-      fill={color}
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      {children}
-    </svg>
-  </div>
-);
+}) => {
+  const iconColor = color || 'var(--icon-default-color)';
+
+  return (
+    <div className="Icon" style={{ width: size, height: size }}>
+      <svg
+        width={size}
+        height={size}
+        fill={iconColor}
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        {children}
+      </svg>
+    </div>
+  );
+};
 
 export default Icon;

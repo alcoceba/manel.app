@@ -1,0 +1,61 @@
+@use '../../styles/variables.scss' as vars;
+
+.Badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  &--anchor {
+    transition: all var(--transition-base);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &--static {
+    cursor: default;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--secondary);
+    padding: 0.4rem;
+    width: 1rem;
+    height: 0.75rem;
+  }
+
+  &__text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.4rem 0.6rem;
+    background-color: var(--white-opacity-08);
+    height: 0.75rem;
+    display: flex;
+    align-items: center;
+    border-left: 3px solid;
+  }
+
+  &--lg {
+    .Badge__icon {
+      padding: 0.6rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .Badge__text {
+      font-size: 1rem;
+      padding: 0.6rem 0.8rem;
+      height: 1.5rem;
+    }
+  }
+}

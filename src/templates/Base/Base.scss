@@ -24,25 +24,42 @@
     position: relative;
     width: 100%;
     max-width: vars.$layout-max-width;
-    margin: 3.5rem auto 1rem;
-    line-height: 1.1;
-    font-size: 0.8rem;
-    text-align: left;
-    opacity: 0.5;
+    margin: 4rem auto 0;
+    padding: 2rem 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 1;
+    border-top: 1px solid var(--primary-opacity-03);
+    color: var(--white-opacity-60);
 
     &::before {
       position: absolute;
-      top: -8px;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
       content: ' ';
       display: block;
-      width: 80px;
-      height: 1px;
+      width: 60px;
+      height: 2px;
       background: linear-gradient(
         90deg,
-        vars.$primary 0%,
-        vars.$white 50%,
+        transparent 0%,
+        var(--primary) 50%,
         transparent 100%
       );
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all var(--transition-base);
+      font-weight: 500;
+
+      &:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
     }
   }
 }

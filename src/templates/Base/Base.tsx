@@ -15,16 +15,17 @@ const Base: React.FC<BaseProps> = ({ children }) => (
       </div>
 
       <footer>
-        View the source code of this site on{' '}
-        <Link
-          title="Go to GitHub repository"
-          url="https://github.com/alcoceba/manel.app"
-          target="_blank"
-        >
-          GitHub
-        </Link>
-        <br />
-        Last updated on Jan 2025
+        <div>
+          View the source code on{' '}
+          <Link
+            title="Go to GitHub repository"
+            url="https://github.com/alcoceba/manel.app"
+            target="_blank"
+          >
+            GitHub
+          </Link>
+          {' • '} Last updated Feb 2026
+        </div>
       </footer>
     </div>
   </div>

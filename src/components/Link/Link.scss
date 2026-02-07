@@ -6,14 +6,22 @@
   align-items: center;
   padding: 5px 0;
   text-decoration: none;
-  color: vars.$white;
-  transition: all vars.$transition-base;
+  color: var(--white);
+  transition: all var(--transition-base);
 
   &__icon {
-    border-radius: 10px;
-    background: vars.$primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    color: var(--secondary);
+    background: var(--primary);
     margin-right: 0.5rem;
-    transition: all vars.$transition-base;
+    transition: all var(--transition-base);
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    padding: 1px;
   }
 
   &--hover {
@@ -31,12 +39,12 @@
       background: linear-gradient(
         90deg,
         transparent 0%,
-        vars.$white 20%,
-        vars.$white 80%,
+        var(--white) 20%,
+        var(--white) 80%,
         transparent 100%
       );
       transform: scaleX(0);
-      transition: all vars.$transition-fast-base;
+      transition: all var(--transition-fast-base);
     }
 
     &:hover {
@@ -50,7 +58,7 @@
 
   &--scale {
     opacity: 0.7;
-    transition: all vars.$transition-fast-base;
+    transition: all var(--transition-fast-base);
     color: func.color-level(vars.$primary, 0);
 
     .Link__icon {

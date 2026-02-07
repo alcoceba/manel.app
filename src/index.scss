@@ -1,25 +1,109 @@
 @use './styles/variables.scss' as vars;
 @use './styles/functions.scss' as func;
-
-@forward './styles/reset.scss';
+@forward './styles/reset';
 
 :root {
+  // Greys
+  --white: #{vars.$white};
+  --gray-200: #{vars.$gray-200};
+  --gray-400: #{vars.$gray-400};
+  --gray-600: #{vars.$gray-600};
+  --gray-800: #{vars.$gray-800};
+  --black: #{vars.$black};
+
+  // Colors
+  --blue: #{vars.$blue};
+  --indigo: #{vars.$indigo};
+  --purple: #{vars.$purple};
+  --pink: #{vars.$pink};
+  --red: #{vars.$red};
+  --orange: #{vars.$orange};
+  --yellow: #{vars.$yellow};
+  --green: #{vars.$green};
+  --teal: #{vars.$teal};
+  --cyan: #{vars.$cyan};
+
+  // Theme Colors
+  --primary: #{vars.$primary};
+  --secondary: #{vars.$secondary};
+  --success: #{vars.$success};
+  --info: #{vars.$info};
+  --warning: #{vars.$warning};
+  --danger: #{vars.$danger};
+  --light: #{vars.$light};
+  --dark: #{vars.$dark};
+
+  // Color Opacity Variants
+  --primary-opacity-15: #{vars.$primary-opacity-15};
+  --primary-opacity-10: #{vars.$primary-opacity-10};
+  --primary-opacity-08: #{vars.$primary-opacity-08};
+  --primary-opacity-06: #{vars.$primary-opacity-06};
+  --primary-opacity-04: #{vars.$primary-opacity-04};
+  --primary-opacity-03: #{vars.$primary-opacity-03};
+  --white-opacity-70: #{vars.$white-opacity-70};
+  --white-opacity-60: #{vars.$white-opacity-60};
+  --white-opacity-40: #{vars.$white-opacity-40};
+  --white-opacity-10: #{vars.$white-opacity-10};
+  --white-opacity-08: #{vars.$white-opacity-08};
+  --secondary-opacity-08: #{vars.$secondary-opacity-08};
+  --secondary-opacity-05: #{vars.$secondary-opacity-05};
+  --secondary-opacity-04: #{vars.$secondary-opacity-04};
+  --secondary-opacity-02: #{vars.$secondary-opacity-02};
+  --black-opacity-90: #{vars.$black-opacity-90};
+
+  // Component-specific Colors
+  --icon-default-color: #{vars.$gray-800};
+  --badge-icon-color: #{vars.$white};
+
+  // Brand & Tech Stack Colors
+  --linkedin-color: #{vars.$linkedin-color};
+  --github-color: #{vars.$github-color};
+  --github-icon-color: #{vars.$github-icon-color};
+  --daily-dev-color: #{vars.$daily-dev-color};
+  --react-color: #{vars.$react-color};
+  --react-icon-color: #{vars.$react-icon-color};
+  --nextjs-color: #{vars.$nextjs-color};
+  --typescript-color: #{vars.$typescript-color};
+  --javascript-color: #{vars.$javascript-color};
+  --javascript-icon-color: #{vars.$javascript-icon-color};
+  --sass-color: #{vars.$sass-color};
+  --html-color: #{vars.$html-color};
+  --vite-color: #{vars.$vite-color};
+  --git-color: #{vars.$git-color};
+  --jest-color: #{vars.$jest-color};
+  --storybook-color: #{vars.$storybook-color};
+  --google-color: #{vars.$google-color};
+  --firebase-color: #{vars.$firebase-color};
+  --docker-color: #{vars.$docker-color};
+  --docker-icon-color: #{vars.$docker-icon-color};
+  --nodejs-color: #{vars.$nodejs-color};
+  --nodejs-icon-color: #{vars.$nodejs-icon-color};
+  --php-color: #{vars.$php-color};
+  --responsive-color: #{vars.$responsive-color};
+  --component-color: #{vars.$component-color};
+  --code-color: #{vars.$code-color};
+  --chrome-color: #{vars.$chrome-color};
+  --firefox-color: #{vars.$firefox-color};
+
+  // Utilities
+  --border-radius: #{vars.$border-radius};
+  --transition-base: #{vars.$transition-base};
+  --transition-fast-base: #{vars.$transition-fast-base};
+
   font-size: 0.9rem;
   line-height: 1.5;
   font-family: vars.$font-family;
   font-weight: 400;
-
   height: 100%;
-  color: vars.$primary;
+  color: var(--primary);
   background: linear-gradient(
       90deg,
-      vars.$secondary 40%,
-      func.color-level(vars.$purple, 9) 100%
+      var(--secondary) 40%,
+      #{func.color-level(vars.$purple, 9)} 100%
     )
     center 3px;
-
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

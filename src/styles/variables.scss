@@ -45,14 +45,62 @@ $border-color: $primary;
 $border-radius: 0.25rem;
 $border-base: $border-width solid $border-color;
 
+// Color Opacity Variants
+
+$primary-opacity-15: rgb(1 223 116 / 0.15);
+$primary-opacity-10: rgb(1 223 116 / 0.1);
+$primary-opacity-08: rgb(1 223 116 / 0.08);
+$primary-opacity-06: rgb(1 223 116 / 0.06);
+$primary-opacity-04: rgb(1 223 116 / 0.04);
+$primary-opacity-03: rgb(1 223 116 / 0.3);
+$white-opacity-70: rgb(255 255 255 / 0.7);
+$white-opacity-60: rgb(255 255 255 / 0.6);
+$white-opacity-40: rgb(255 255 255 / 0.4);
+$white-opacity-10: rgb(255 255 255 / 0.1);
+$white-opacity-08: rgb(255 255 255 / 0.08);
+$secondary-opacity-08: rgb(48 44 51 / 0.08);
+$secondary-opacity-05: rgb(48 44 51 / 0.05);
+$secondary-opacity-04: rgb(48 44 51 / 0.04);
+$secondary-opacity-02: rgb(48 44 51 / 0.02);
+$black-opacity-90: rgb(0 0 0 / 0.9);
+
 // Others
 
-$font-family-consolas: 'Courier New', Courier, monospace;
-$font-family-regular: Helvetica, Arial, 'sans-serif';
+$font-family-consolas: 'Courier New', courier, monospace;
+$font-family-regular: helvetica, arial, 'sans-serif';
 $font-family: $font-family-consolas;
-
 $transition-base: 0.2s ease-out;
 $transition-fast-base: 0.1s ease-out;
-
 $layout-padding-x: 2rem;
 $layout-max-width: 500px;
+
+// Brand & Tech Stack Colors
+
+$linkedin-color: #0a66c2;
+$github-color: #000000;
+$github-icon-color: #ffffff;
+$daily-dev-color: #0e7a1c;
+$react-color: #61dafb;
+$react-icon-color: #000000;
+$nextjs-color: #000000;
+$typescript-color: #3178c6;
+$javascript-color: #f7df1e;
+$javascript-icon-color: #000000;
+$sass-color: #cc6699;
+$html-color: #e34c26;
+$vite-color: #646cff;
+$git-color: #f1502f;
+$jest-color: #c21325;
+$storybook-color: #ff4785;
+$google-color: #4285f4;
+$firebase-color: #ff7139;
+$docker-color: #2496ed;
+$docker-icon-color: #ffffff;
+$nodejs-color: #339933;
+$nodejs-icon-color: #ffffff;
+$php-color: #777bb4;
+$responsive-color: #0066cc;
+$component-color: #9b59b6;
+$code-color: #5c6ac4;
+$chrome-color: #4285f4;
+$firefox-color: #ff7139;

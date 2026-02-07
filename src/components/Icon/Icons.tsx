@@ -1,49 +1,43 @@
-import Icon, { IconProps } from './Icon';
+import {
+  FaReact,
+  FaNode,
+  FaGithub,
+  FaLinkedin,
+  FaChrome,
+  FaFirefoxBrowser,
+} from 'react-icons/fa';
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiSass,
+  SiHtml5,
+  SiJest,
+  SiStorybook,
+  SiTestinglibrary,
+  SiPhp,
+} from 'react-icons/si';
+import { BiDevices, BiCube, BiCode } from 'react-icons/bi';
+import { IconType } from 'react-icons';
 
-import React from 'react';
+export const GitHubIcon: IconType = FaGithub;
+export const LinkedInIcon: IconType = FaLinkedin;
+export const DailyDevIcon: IconType = BiCode;
+export const StackOverflowIcon: IconType = BiCode;
+export const ChromeIcon: IconType = FaChrome;
+export const FirefoxIcon: IconType = FaFirefoxBrowser;
 
-export const GitHubIcon: React.FC<IconProps> = props => (
-  <Icon {...props} viewBox="0 0 24 24">
-    <path
-      fill={props.color}
-      d="m22.1 7.7c0.1-0.5 0.2-3.2-0.9-5.7 0 0-2.3 0.3-5.9 2.7-0.8-0.2-2-0.3-3.3-0.3-1.3 0-2.5 0.1-3.3 0.3-3.6-2.4-5.9-2.7-5.9-2.7-1.1 2.5-1 5.2-0.9 5.7-1.2 1.3-1.9 2.8-1.9 4.9 0 9.2 7.8 9.4 9.7 9.4 0.5 0 1.4 0 2.3 0 0.9 0 1.8 0 2.3 0 1.9 0 9.7-0.1 9.7-9.4 0-2.1-0.7-3.6-1.9-4.9zm-10.1 13.2c-5 0-8.8-0.6-8.8-5.3 0-1.1 0.4-2.2 1.4-3 1.6-1.5 4.3-0.7 7.4-0.7q0 0 0 0 0 0 0 0c3.1 0 5.8-0.8 7.4 0.7 1 0.8 1.4 1.9 1.4 3 0 4.7-3.8 5.3-8.8 5.3zm4.1-7.2c-0.9 0-1.6 1-1.6 2.3 0 1.3 0.7 2.3 1.6 2.3 1 0 1.7-1 1.7-2.3 0-1.3-0.7-2.3-1.7-2.3zm-8.2 0c-1 0-1.7 1-1.7 2.3 0 1.3 0.7 2.3 1.7 2.3 0.9 0 1.6-1 1.6-2.3 0-1.3-0.7-2.3-1.6-2.3z"
-    />
-  </Icon>
-);
-
-export const DailyDevIcon: React.FC<IconProps> = props => (
-  <Icon {...props} viewBox="0 0 24 24">
-    <path
-      fill={props.color}
-      d="m20.4 12l-2.6-2.6 1.3-2.6 4.2 4.2c0.6 0.6 0.6 1.4 0 2l-5.1 5.2c-0.6 0.5-1.4 0.5-2 0-0.5-0.6-0.5-1.4 0-2z"
-    />
-    <path
-      fill={props.color}
-      d="m16.2 5.8c0.6-0.5 1.4-0.5 2 0l0.9 1-11.3 11.4c-0.6 0.5-1.4 0.5-2 0l-0.9-1zm-4.9 3.6l-1.9 1.9-2.6-2.6-3.3 3.3 2.6 2.6-1.3 2.6-4.2-4.3c-0.5-0.5-0.5-1.4 0-1.9l5.2-5.2c0.5-0.5 1.4-0.5 1.9 0z"
-    />
-  </Icon>
-);
-
-export const LinkedInIcon: React.FC<IconProps> = props => (
-  <Icon {...props} viewBox="0 0 24 24">
-    <path fill-rule="evenodd" fill={props.color} d="m7 9v11h-4v-11z" />
-    <path
-      fill-rule="evenodd"
-      fill={props.color}
-      d="m5 7c-1.1 0-2-0.9-2-2 0-1.1 0.9-2 2-2 1.1 0 2 0.9 2 2 0 1.1-0.9 2-2 2z"
-    />
-    <path
-      fill={props.color}
-      d="m16.5 8.3q-0.5 0-1 0.1-0.5 0.1-0.9 0.3-0.5 0.2-0.9 0.5-0.4 0.4-0.7 0.8v-1h-4v11h4v-7c0-0.5 0.2-1 0.6-1.4 0.4-0.4 0.9-0.6 1.4-0.6 0.5 0 1 0.2 1.4 0.6 0.4 0.4 0.6 0.9 0.6 1.4v7h4v-7.3q0-0.8-0.3-1.7-0.4-0.8-1-1.4-0.7-0.7-1.5-1-0.8-0.3-1.7-0.4z"
-    />
-  </Icon>
-);
-
-export const StackOverflowIcon: React.FC<IconProps> = props => (
-  <Icon {...props} viewBox="0 0 24 24">
-    <path
-      fill={props.color}
-      d="m19 21.9v-6.4h2.1v8.5h-19.3v-8.5h2.2v6.4zm-12.9-2.2h10.7v-2.1h-10.7zm0.3-4.9l10.4 2.2 0.5-2-10.5-2.2zm1.4-5.1l9.7 4.5 0.9-1.9-9.7-4.5-0.9 1.9zm2.7-4.8l8.2 6.9 1.4-1.6-8.3-6.9-1.3 1.6zm5.3-5l-1.7 1.3 6.4 8.6 1.7-1.3-6.4-8.6z"
-    />
-  </Icon>
-);
+export const ReactIcon: IconType = FaReact;
+export const NextjsIcon: IconType = SiNextdotjs;
+export const TypeScriptIcon: IconType = SiTypescript;
+export const JavaScriptIcon: IconType = SiJavascript;
+export const SassIcon: IconType = SiSass;
+export const NodejsIcon: IconType = FaNode;
+export const HtmlIcon: IconType = SiHtml5;
+export const JestIcon: IconType = SiJest;
+export const StorybookIcon: IconType = SiStorybook;
+export const TestingLibraryIcon: IconType = SiTestinglibrary;
+export const PhpIcon: IconType = SiPhp;
+export const ResponsiveIcon: IconType = BiDevices;
+export const ComponentIcon: IconType = BiCube;
+export const CodeIcon: IconType = BiCode;

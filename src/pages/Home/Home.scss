@@ -3,12 +3,46 @@
 .Home {
   &__icon {
     font-size: 1.3rem;
-    color: vars.$yellow;
+    color: var(--yellow);
   }
 
   &__section {
     width: 100%;
     max-width: vars.$layout-max-width;
     margin: 2rem auto 0;
+  }
+
+  &__skills {
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+  }
+
+  strong {
+    font-weight: bold;
   }
 }
