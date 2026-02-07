@@ -107,3 +107,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+html,
+body {
+  background: linear-gradient(
+      90deg,
+      var(--secondary) 40%,
+      #{func.color-level(vars.$purple, 9)} 100%
+    )
+    center 3px;
+}
