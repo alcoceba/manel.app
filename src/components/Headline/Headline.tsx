@@ -1,15 +1,15 @@
 import './Headline.scss';
 
-interface HeadlineProps extends React.SVGProps<SVGSVGElement> {
+interface HeadlineProps {
   title: string;
   subtitle?: string;
 }
 
 const Headline: React.FC<HeadlineProps> = ({ title, subtitle }) => (
   <div className="Headline">
-    <div className="Headline__content">
+    <div className="Headline__inner">
       <h1>{title}</h1>
-      <p>{subtitle}</p>
+      {subtitle && <p>{subtitle}</p>}
     </div>
   </div>
 );
