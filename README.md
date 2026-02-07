@@ -70,8 +70,6 @@ npm run deploy
 ### Pages
 
 - **Home** - Main portfolio with social links, tech skills, and project highlights
-- **Career** - Professional timeline, key achievements, and education
-- **Next.js Explorer** - Browser extension project showcase with links to web stores
 
 ### Components
 
