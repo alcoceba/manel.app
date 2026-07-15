@@ -40,29 +40,28 @@
 
   &__inner {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: baseline;
     gap: 1rem;
     width: 100%;
     max-width: 500px;
     padding: 2rem 0;
-    background: 
-      linear-gradient(var(--secondary-opacity-05) 1px, transparent 1px);
-    background-size: 100% 100%, 8px 8px;
-    background-position: 0 0, 0 0;
+    background: linear-gradient(
+      var(--secondary-opacity-05) 1px,
+      transparent 1px
+    );
+    background-size:
+      100% 100%,
+      8px 8px;
+    background-position:
+      0 0,
+      0 0;
     box-shadow:
       inset 0 0 0 1px var(--secondary-opacity-10),
       0 4px 0 var(--primary-opacity-20),
       0 8px 16px var(--primary-opacity-10);
     animation: pixel-float 3s ease-in-out infinite;
     image-rendering: pixelated;
-
-    @media (width >= 768px) {
-      flex-direction: row;
-      align-items: center;
-      gap: 2rem;
-      padding: 2.5rem 3rem;
-    }
   }
 
   h1 {

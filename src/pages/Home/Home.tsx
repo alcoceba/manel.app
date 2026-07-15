@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className="Home">
       <header className="Home__top">
-        <Headline title="Hi 🙋‍♂️ I'm Manel" />
+        <Headline title="Hi 👾 I'm Manel" />
       </header>
 
       <section className="Home__section">
@@ -67,15 +67,27 @@ function Home() {
               color="var(--react-color)"
               iconColor="var(--react-icon-color)"
             />
-            <Badge icon={Icons.Nextjs} text="Next.js" color="var(--nextjs-color)" />
-            <Badge icon={Icons.TypeScript} text="TypeScript" color="var(--typescript-color)" />
+            <Badge
+              icon={Icons.Nextjs}
+              text="Next.js"
+              color="var(--nextjs-color)"
+            />
+            <Badge
+              icon={Icons.TypeScript}
+              text="TypeScript"
+              color="var(--typescript-color)"
+            />
             <Badge
               icon={Icons.JavaScript}
               text="JavaScript"
               color="var(--javascript-color)"
               iconColor="var(--javascript-icon-color)"
             />
-            <Badge icon={Icons.Sass} text="Sass/CSS" color="var(--sass-color)" />
+            <Badge
+              icon={Icons.Sass}
+              text="Sass/CSS"
+              color="var(--sass-color)"
+            />
             <Badge icon={Icons.Html} text="HTML5" color="var(--html-color)" />
             <Badge
               icon={Icons.Nodejs}
@@ -94,7 +106,11 @@ function Home() {
               text="Component-Driven Dev"
               color="var(--component-color)"
             />
-            <Badge icon={Icons.Code} text="Clean Code" color="var(--code-color)" />
+            <Badge
+              icon={Icons.Code}
+              text="Clean Code"
+              color="var(--code-color)"
+            />
           </div>
         </div>
       </section>

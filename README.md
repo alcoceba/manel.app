@@ -27,12 +27,14 @@ View the live site at https://manel.is-a.dev (custom domain via GitHub Pages).
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/alcoceba/manel.app.git
    cd manel.app
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -78,12 +80,14 @@ Components are located in `src/components/` and include reusable UI elements lik
 ### Styling System
 
 **SCSS Variables** (`src/styles/variables.scss`):
+
 - Theme colors (primary, secondary, grays)
 - Brand colors for tech stack (React, TypeScript, Node.js, etc.)
 - Spacing, typography, and layout constants
 - Opacity variants for transparency effects
 
 **CSS Custom Properties** (`src/index.scss`):
+
 - All SCSS variables exported as CSS variables in `:root`
 - Enables runtime theme customization
 - Component colors use `var(--color-name)` pattern

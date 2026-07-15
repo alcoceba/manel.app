@@ -192,7 +192,7 @@ npm run build
 - **Static Deployment**: Deployed as static files to GitHub Pages
 - **TypeScript Enabled**: All code uses TypeScript for type safety
 - **Sass Modules**: Component styles use Sass (SCSS) in co-located files
-- **Color Management**: 
+- **Color Management**:
   - SCSS variables defined in `src/styles/variables.scss` for all colors
   - CSS custom properties (CSS variables) in `:root` defined in `src/index.scss`
   - All colors in components must use CSS variables via `var(--color-name)` for runtime theme customization

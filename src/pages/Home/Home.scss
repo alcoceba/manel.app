@@ -10,6 +10,10 @@
     width: 100%;
     max-width: vars.$layout-max-width;
     margin: 2rem auto 0;
+
+    p + p {
+      margin-top: 1.5rem;
+    }
   }
 
   &__skills {
