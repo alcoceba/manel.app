@@ -1,22 +1,22 @@
 # manel.app
 
-A minimalistic, high-performance personal portfolio and landing page built with **Vite**, **React**, **TypeScript**, and **SCSS**. Features a centralized color management system with CSS custom properties for easy theming.
+A modern, minimalistic personal landing page and interactive terminal portfolio built with **Vite**, **React 19**, **TypeScript**, and **SCSS**. Features an interactive draggable/resizable retro-modern terminal window, simulated command session, and a centralized color management system with CSS custom properties.
 
 ## Live Demo
 
-View the live site at https://manel.is-a.dev (custom domain via GitHub Pages).
+View the live site at [https://manel.is-a.dev](https://manel.is-a.dev) (custom domain via GitHub Pages).
 
 ## Tech Stack
 
 - **Vite**: Lightning-fast build tool with instant HMR and optimized production builds
-- **React 19**: Component-based UI with functional components and hooks
-- **TypeScript**: Full type safety for better code quality and IDE support
-- **SCSS**: Advanced CSS with variables, mixins, and nesting for maintainable styles
-- **CSS Custom Properties**: Runtime-configurable theme variables mapped from SCSS
-- **React Router**: Client-side routing for multi-page SPA experience
-- **ESLint**: JavaScript/TypeScript linting
-- **Prettier**: Code formatting
-- **Stylelint**: SCSS/CSS linting and formatting
+- **React 19**: Modern component architecture with hooks and concurrent features
+- **TypeScript**: Strict type safety across components, hooks, and test suites
+- **SCSS**: Modular stylesheets with variables, functions, and BEM architecture
+- **CSS Custom Properties**: Runtime-configurable theme variables mapped from SCSS in `:root`
+- **React Router**: Client-side SPA routing
+- **Vitest & React Testing Library**: Unit and component testing with jsdom
+- **ESLint & Prettier**: Automated linting and formatting
+- **Stylelint**: SCSS/CSS linting enforcing standard conventions and class patterns
 
 ## Getting Started
 
@@ -40,72 +40,91 @@ View the live site at https://manel.is-a.dev (custom domain via GitHub Pages).
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
+
    Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Available Commands
 
 ```bash
-# Development server with hot-module reloading
+# Start development server with instant HMR
 npm run dev
 
-# Build for production
+# Run TypeScript compilation and Vite production build
 npm run build
+
+# Run unit tests with Vitest
+npm test
+
+# Run tests in watch mode
+npm run test:watch
 
 # Preview production build locally
 npm run preview
 
-# Lint and format all code (JavaScript/TypeScript and SCSS)
+# Lint and format all files (Prettier, ESLint, Stylelint)
 npm run lint
 
-# Lint and format SCSS files only
+# Lint and auto-fix SCSS files
 npm run lint:styles
 
-# Deploy to GitHub Pages
+# Build and deploy to GitHub Pages
 npm run deploy
 ```
 
-## Project Features
+## Architecture & Features
 
-### Pages
+### Interactive Terminal Window
 
-- **Home** - Main portfolio with social links, tech skills, and project highlights
+The core experience is an interactive terminal inspired by classic Unix/macOS terminals:
 
-### Components
+- **Window Management**:
+  - **Draggable**: Drag the terminal anywhere on the screen by its title bar. Clamped to viewport bounds.
+  - **Resizable**: Resize the window dynamically using the bottom-right grip handle.
+  - **Traffic Lights**: Close, minimize, and maximize/fullscreen controls with dedicated state transitions.
+  - **Double-Click Title Bar**: Quickly toggle between maximized and restored viewports.
+  - **Keyboard Shortcuts**: Press `Escape` to quickly exit maximized or minimized modes.
+  - **Easter Egg**: Dragging the window reveals a hidden surprise in the background HTML.
+  - **Relaunch / Restore Notices**: Clean minimalist actions to reopen or restore closed and minimized sessions.
 
-Components are located in `src/components/` and include reusable UI elements like Badge, Headline, Icon, and Tooltip. Each component has its own folder with TypeScript (.tsx) and SCSS (.scss) files.
+- **Simulated Terminal Session**:
+  - Automated typewriter animation for shell commands (`cat coffee.txt`).
+  - Terminal spinner frames during initialization and connection.
+  - Terminal links (`[ LinkedIn ]`, `[ GitHub ]`, `[ daily.dev ]`) with keyboard accessibility and hover states.
+  - Session replay on close and relaunch.
+
+### Key Components
+
+- **`Terminal`** (`src/components/Terminal/`): Main terminal window component composed of:
+  - `TerminalBar`: Draggable toolbar and window title
+  - `TerminalTrafficLights`: Close, minimize, and maximize buttons
+  - `TerminalNotice`: Minimized and closed session notices
+  - `TerminalResizeGrip`: Interactive bottom-right resize handle
+  - `useTerminalWindow`: Custom hook handling pointer capture, window bounds, dragging, and resizing
+- **`ProfileCard`** (`src/components/ProfileCard/`): Bio card featuring tag identifier (`[ whoami ]`) and intro text
+- **`TerminalPrompt`** (`src/components/TerminalPrompt/`): Styled command prompt (`manel@dev:~$`)
+- **`TerminalLinks`** (`src/components/TerminalLinks/`): Navigation row of interactive terminal links
+- **`useTerminalSession`** (`src/hooks/useTerminalSession.ts`): Orchestrates typing animation timers, spinner states, and command sequence flow
 
 ### Styling System
 
-**SCSS Variables** (`src/styles/variables.scss`):
+- **SCSS Variables** (`src/styles/variables.scss`): Central source of truth for color palette, spacing, typography, and opacity variants.
+- **CSS Custom Properties** (`src/index.scss`): Variables mapped into `:root` for runtime styling.
+- **BEM Naming**: Consistent PascalCase BEM structure (`.Terminal`, `.Terminal__bar`, `.Terminal--maximized`).
 
-- Theme colors (primary, secondary, grays)
-- Brand colors for tech stack (React, TypeScript, Node.js, etc.)
-- Spacing, typography, and layout constants
-- Opacity variants for transparency effects
+## Code Quality & Testing
 
-**CSS Custom Properties** (`src/index.scss`):
-
-- All SCSS variables exported as CSS variables in `:root`
-- Enables runtime theme customization
-- Component colors use `var(--color-name)` pattern
-- Centralized color management for easy maintenance
-
-## Code Quality
-
-- **TypeScript**: Strict mode enabled for type safety
-- **ESLint**: Enforces consistent code patterns
-- **Prettier**: Automatic code formatting
-- **Stylelint**: CSS/SCSS linting with custom rules
-- **PascalCase BEM**: Component classes follow `ComponentName`, `ComponentName__element`, `ComponentName--modifier`
+- **Full Test Suite**: Tested with Vitest and `@testing-library/react` across custom hooks, window events, animations, and responsive interactions.
+- **Zero Lint Errors**: Automated code standard enforcement across TypeScript and SCSS.
+- **Strict TypeScript**: Type-safe component props, hooks options, and event signatures.
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages on each push to `main`. Uses a custom domain (CNAME file) pointing to `manel.is-a.dev`.
+The site is statically deployed to GitHub Pages with the custom domain `manel.is-a.dev`:
 
 ```bash
-# Manual deployment
 npm run deploy
 ```
