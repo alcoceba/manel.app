@@ -22,7 +22,7 @@ View the live site at https://manel.is-a.dev (custom domain via GitHub Pages).
 
 ### Prerequisites
 
-- Node.js 16+ and npm
+- Node.js 22+ and npm
 
 ### Installation
 
@@ -75,7 +75,7 @@ npm run deploy
 
 ### Components
 
-Components are located in `src/components/` and include reusable UI elements like Badge, Card, Headline, Icon, Link, Breadcrumbs, and Tooltip. Each component has its own folder with TypeScript (.tsx) and SCSS (.scss) files.
+Components are located in `src/components/` and include reusable UI elements like Badge, Headline, Icon, and Tooltip. Each component has its own folder with TypeScript (.tsx) and SCSS (.scss) files.
 
 ### Styling System
 

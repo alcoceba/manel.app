@@ -3,7 +3,6 @@ import './Home.scss';
 import Badge from '../../components/Badge/Badge';
 import Headline from '../../components/Headline/Headline';
 import { Icons } from '../../components/Icon';
-import Link from '../../components/Link/Link';
 
 function Home() {
   return (
@@ -12,7 +11,7 @@ function Home() {
         <Headline title="Hi 👾 I'm Manel" />
       </header>
 
-      <section className="Home__section">
+      <section className="Home__section Home__section--badges">
         <div className="Home__badges">
           <Badge
             icon={Icons.LinkedIn}
@@ -21,9 +20,7 @@ function Home() {
             target="_blank"
             title="Go to LinkedIn / alcoceba"
             color="var(--linkedin-color)"
-            size="lg"
-            hideText
-            showTooltip
+            variant="social"
           />
           <Badge
             icon={Icons.GitHub}
@@ -33,9 +30,7 @@ function Home() {
             title="Go to GitHub / alcoceba"
             color="var(--github-color)"
             iconColor="var(--github-icon-color)"
-            size="lg"
-            hideText
-            showTooltip
+            variant="social"
           />
           <Badge
             icon={Icons.DailyDev}
@@ -44,75 +39,16 @@ function Home() {
             target="_blank"
             title="Go to daily.dev / alcoceba"
             color="var(--daily-dev-color)"
-            size="lg"
-            hideText
-            showTooltip
+            variant="social"
           />
         </div>
       </section>
 
       <section className="Home__section">
-        <p>
+        <p className="Home__intro">
           I'm a <strong>Software Engineer</strong> with 14+ years of experience
           building web applications.
         </p>
-      </section>
-
-      <section className="Home__section">
-        <div className="Home__skills">
-          <div className="Home__skillsList">
-            <Badge
-              icon={Icons.React}
-              text="React"
-              color="var(--react-color)"
-              iconColor="var(--react-icon-color)"
-            />
-            <Badge
-              icon={Icons.Nextjs}
-              text="Next.js"
-              color="var(--nextjs-color)"
-            />
-            <Badge
-              icon={Icons.TypeScript}
-              text="TypeScript"
-              color="var(--typescript-color)"
-            />
-            <Badge
-              icon={Icons.JavaScript}
-              text="JavaScript"
-              color="var(--javascript-color)"
-              iconColor="var(--javascript-icon-color)"
-            />
-            <Badge
-              icon={Icons.Sass}
-              text="Sass/CSS"
-              color="var(--sass-color)"
-            />
-            <Badge icon={Icons.Html} text="HTML5" color="var(--html-color)" />
-            <Badge
-              icon={Icons.Nodejs}
-              text="Node.js"
-              color="var(--nodejs-color)"
-              iconColor="var(--nodejs-icon-color)"
-            />
-            <Badge icon={Icons.Php} text="PHP" color="var(--php-color)" />
-            <Badge
-              icon={Icons.Responsive}
-              text="Responsive Design"
-              color="var(--responsive-color)"
-            />
-            <Badge
-              icon={Icons.Component}
-              text="Component-Driven Dev"
-              color="var(--component-color)"
-            />
-            <Badge
-              icon={Icons.Code}
-              text="Clean Code"
-              color="var(--code-color)"
-            />
-          </div>
-        </div>
       </section>
 
       <section className="Home__section">
@@ -120,15 +56,18 @@ function Home() {
           ☕️ I'm open to connect and share ideas, help with challenges, or just
           talk about what you're working on.
         </p>
-        <br />
         <p>
-          <Link
+          <a
+            className="Home__link"
+            href="https://www.linkedin.com/in/alcoceba/"
+            target="_blank"
+            rel="noopener noreferrer"
             title="Want to know how can I help you?"
-            url="https://www.linkedin.com/in/alcoceba"
           >
             Click here
-          </Link>{' '}
+          </a>{' '}
           to get to know me better.
+          <span className="TerminalCursor" />
         </p>
       </section>
     </div>

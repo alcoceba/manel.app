@@ -1,5 +1,4 @@
 @use './styles/variables.scss' as vars;
-@use './styles/functions.scss' as func;
 @forward './styles/reset';
 
 :root {
@@ -34,6 +33,7 @@
   --dark: #{vars.$dark};
 
   // Color Opacity Variants
+  --primary-opacity-20: #{vars.$primary-opacity-20};
   --primary-opacity-15: #{vars.$primary-opacity-15};
   --primary-opacity-10: #{vars.$primary-opacity-10};
   --primary-opacity-08: #{vars.$primary-opacity-08};
@@ -45,11 +45,14 @@
   --white-opacity-40: #{vars.$white-opacity-40};
   --white-opacity-10: #{vars.$white-opacity-10};
   --white-opacity-08: #{vars.$white-opacity-08};
+  --secondary-opacity-10: #{vars.$secondary-opacity-10};
   --secondary-opacity-08: #{vars.$secondary-opacity-08};
   --secondary-opacity-05: #{vars.$secondary-opacity-05};
   --secondary-opacity-04: #{vars.$secondary-opacity-04};
   --secondary-opacity-02: #{vars.$secondary-opacity-02};
   --black-opacity-90: #{vars.$black-opacity-90};
+  --purple-opacity-20: #{vars.$purple-opacity-20};
+  --purple-opacity-15: #{vars.$purple-opacity-15};
 
   // Component-specific Colors
   --icon-default-color: #{vars.$gray-800};
@@ -96,15 +99,118 @@
   font-weight: 400;
   height: 100%;
   color: var(--primary);
-  // background: linear-gradient(
-  //   90deg,
-  //   var(--secondary) 40%,
-  //   #{func.color-level(vars.$purple, 9)} 100%
-  // );
-  background-color: #{func.color-level(vars.$purple, 9)};
-
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgb(1 223 116 / 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgb(111 66 193 / 0.25) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, #120524 0%, #0a0318 50%, #070214 100%);
+  background-attachment: fixed;
   font-synthesis: none;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+  background-color: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all var(--transition-base);
+
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+}
+
+// CRT scanline + retro grid overlay
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgb(0 0 0 / 0.15),
+      rgb(0 0 0 / 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0%,
+      rgb(1 223 116 / 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(1 223 116 / 0.03) 1px,
+      transparent 1px
+    );
+  background-size:
+    100% 2px,
+    40px 40px,
+    40px 40px;
+  opacity: 0.4;
+}
+
+// CRT vignette
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: radial-gradient(circle, transparent 55%, rgb(0 0 0 / 0.45) 100%);
+  opacity: 0.5;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.TerminalCursor {
+  top: -0.2rem;
+  position: relative;
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  margin-left: 0.2em;
+  background-color: currentcolor;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+.TerminalGlow {
+  text-shadow:
+    0 0 4px currentcolor,
+    0 0 8px currentcolor;
 }

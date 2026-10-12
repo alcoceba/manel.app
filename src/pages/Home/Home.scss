@@ -1,52 +1,69 @@
 @use '../../styles/variables.scss' as vars;
 
 .Home {
-  &__icon {
-    font-size: 1.3rem;
-    color: var(--yellow);
-  }
-
   &__section {
     width: 100%;
     max-width: vars.$layout-max-width;
-    margin: 2rem auto 0;
+    margin: 1rem auto 0;
+
+    @media (width >= 768px) {
+      margin: 1.5rem auto 0;
+    }
+
+    &--badges {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+
+      @media (width >= 768px) {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
 
     p + p {
-      margin-top: 1.5rem;
+      margin-top: 0.75rem;
+
+      @media (width >= 768px) {
+        margin-top: 1rem;
+      }
     }
   }
 
-  &__skills {
-    h2 {
-      margin: 0 0 1rem;
-      font-size: 1.5rem;
+  &__link {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: underline;
+      opacity: 0.8;
     }
   }
 
-  &__skillsList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  &__intro {
+    font-size: 1.1rem;
+    color: var(--white);
+    text-shadow: 0 0 10px var(--primary-opacity-15);
+
+    @media (width >= 768px) {
+      font-size: 1.25rem;
+    }
+
+    strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
   }
 
   &__badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-  }
+    gap: 0.5rem;
 
-  &__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  h3 {
-    margin: 0 0 1rem;
-    font-size: 1.25rem;
-  }
-
-  strong {
-    font-weight: bold;
+    @media (width >= 768px) {
+      gap: 0.6rem;
+    }
   }
 }

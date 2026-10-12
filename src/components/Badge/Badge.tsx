@@ -17,6 +17,7 @@ interface BadgeProps {
   size?: 'sm' | 'lg';
   hideText?: boolean;
   showTooltip?: boolean;
+  variant?: 'default' | 'social';
 }
 
 const Badge: React.FC<BadgeProps> = ({
@@ -31,9 +32,11 @@ const Badge: React.FC<BadgeProps> = ({
   size = 'sm',
   hideText = false,
   showTooltip = false,
+  variant = 'default',
 }) => {
   const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
   const finalIconColor = iconColor || 'var(--badge-icon-color)';
+  const sizeClass = variant === 'social' ? 'Badge--social' : `Badge--${size}`;
 
   const badgeContent = (
     <>
@@ -49,9 +52,21 @@ const Badge: React.FC<BadgeProps> = ({
   );
 
   if (url) {
-    const badge = (
+    const isExternal = /^https?:\/\//.test(url);
+    const badge = isExternal ? (
+      <a
+        className={`Badge Badge--anchor ${sizeClass}`}
+        href={url}
+        title={title || text}
+        target={target}
+        rel={rel}
+        aria-label={ariaLabel || text}
+      >
+        {badgeContent}
+      </a>
+    ) : (
       <RouterLink
-        className={`Badge Badge--anchor Badge--${size}`}
+        className={`Badge Badge--anchor ${sizeClass}`}
         to={url}
         title={title || text}
         target={target}
@@ -66,7 +81,7 @@ const Badge: React.FC<BadgeProps> = ({
   }
 
   return (
-    <div className={`Badge Badge--static Badge--${size}`} title={title}>
+    <div className={`Badge Badge--static ${sizeClass}`} title={title}>
       {badgeContent}
     </div>
   );

@@ -5,7 +5,12 @@
 // Request a color level
 
 @function color-level($color, $level: 0) {
-  $color-base: if($level > 0, vars.$black, vars.$white);
+  $color-base: vars.$white;
+
+  @if $level > 0 {
+    $color-base: vars.$black;
+  }
+
   $level: math.abs($level);
 
   @return color.mix($color-base, $color, $level * vars.$color-interval);
