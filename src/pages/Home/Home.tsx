@@ -53,8 +53,8 @@ function Home() {
 
       <section className="Home__section">
         <p>
-          ☕️ I'm open to connect and share ideas, help with challenges, or just
-          talk about what you're working on.
+          ☕️ I'm open to connect and share ideas, or just talk about what you're
+          working on.
         </p>
         <p>
           <a

@@ -25,6 +25,7 @@
   // Theme Colors
   --primary: #{vars.$primary};
   --secondary: #{vars.$secondary};
+  --bg-color: #{vars.$bg-color};
   --success: #{vars.$success};
   --info: #{vars.$info};
   --warning: #{vars.$warning};
@@ -110,7 +111,8 @@
       rgb(111 66 193 / 0.25) 0%,
       transparent 55%
     ),
-    linear-gradient(180deg, #120524 0%, #0a0318 50%, #070214 100%);
+    linear-gradient(180deg, var(--bg-color) 0%, #0a0318 50%, #070214 100%);
+  background-color: var(--bg-color);
   background-attachment: fixed;
   font-synthesis: none;
   text-rendering: optimizelegibility;
@@ -118,14 +120,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html,
-body {
+html {
   min-height: 100%;
+  background-color: var(--bg-color);
 }
 
 body {
   position: relative;
-  background-color: inherit;
+  min-height: 100%;
+  background-color: var(--bg-color);
   color: inherit;
 }
 
