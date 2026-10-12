@@ -1,0 +1,22 @@
+.Terminal {
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    cursor: grab;
+    user-select: none;
+    background-color: var(--white-opacity-08);
+    border-bottom: 1px solid var(--white-opacity-10);
+    touch-action: none;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &__title {
+    font-size: 0.75rem;
+    color: var(--white-opacity-60);
+  }
+}

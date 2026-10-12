@@ -1,0 +1,12 @@
+.TerminalPrompt {
+  white-space: nowrap;
+
+  &__user {
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  &__path {
+    color: var(--white-opacity-60);
+  }
+}

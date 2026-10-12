@@ -1,0 +1,40 @@
+.Terminal {
+  &__notice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    text-align: center;
+  }
+
+  &__message {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--white-opacity-70);
+  }
+
+  &__reopen {
+    padding: 0 0.15rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: pre;
+    color: var(--yellow);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    transition:
+      color var(--transition-fast-base),
+      background-color var(--transition-fast-base);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--bg-color);
+      background-color: var(--yellow);
+      text-decoration: none;
+      outline: none;
+    }
+  }
+}

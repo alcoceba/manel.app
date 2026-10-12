@@ -1,0 +1,23 @@
+.Terminal {
+  &__grip {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 1rem;
+    height: 1rem;
+    padding: 0.15rem;
+    color: var(--white-opacity-40);
+    cursor: se-resize;
+    touch-action: none;
+    transition: color var(--transition-fast-base);
+
+    &:hover,
+    &:active {
+      color: var(--primary);
+    }
+  }
+}

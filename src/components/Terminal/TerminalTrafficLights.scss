@@ -1,0 +1,67 @@
+.Terminal {
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    &:hover,
+    &:focus-within {
+      .Terminal__icon {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &__dot {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.75rem;
+    height: 0.75rem;
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    transition:
+      transform var(--transition-fast-base),
+      opacity var(--transition-fast-base);
+
+    &:hover,
+    &:focus-visible {
+      transform: scale(1.15);
+      outline: 1px solid var(--white-opacity-40);
+      outline-offset: 1px;
+
+      .Terminal__icon {
+        opacity: 1;
+      }
+    }
+
+    &--red {
+      background-color: var(--red);
+    }
+
+    &--yellow {
+      background-color: var(--yellow);
+    }
+
+    &--green {
+      background-color: var(--green);
+
+      .Terminal__icon {
+        font-size: 0.38rem;
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 0.55rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgb(0 0 0 / 0.85);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-fast-base);
+  }
+}

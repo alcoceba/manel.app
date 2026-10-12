@@ -1,74 +1,134 @@
+import { useState } from 'react';
 import './Home.scss';
 
-import Badge from '../../components/Badge/Badge';
-import Headline from '../../components/Headline/Headline';
-import { Icons } from '../../components/Icon';
+import { ProfileCard } from '../../components/ProfileCard/ProfileCard';
+import { Terminal } from '../../components/Terminal/Terminal';
+import { TerminalLinks } from '../../components/TerminalLinks/TerminalLinks';
+import { TerminalPrompt } from '../../components/TerminalPrompt/TerminalPrompt';
+import {
+  DEFAULT_LINKS,
+  useTerminalSession,
+} from '../../hooks/useTerminalSession';
 
 function Home() {
+  const [isTerminalMinimizedOrClosed, setIsTerminalMinimizedOrClosed] =
+    useState(false);
+  const {
+    catCommand,
+    message,
+    fetchCommand,
+    isInitializing,
+    initSpinnerFrame,
+    isCatLineVisible,
+    catChars,
+    catEnd,
+    isMessageVisible,
+    fetchChars,
+    isFetchLineVisible,
+    isFetchDone,
+    isSpinnerVisible,
+    spinnerFrame,
+    isResultsVisible,
+    isFinalPromptVisible,
+    ticks,
+    restartSession,
+  } = useTerminalSession();
+
+  const statusContent = (
+    <>
+      <span>View the source code on </span>
+      <a
+        className="Home__statusLink"
+        href="https://github.com/alcoceba/manel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Go to GitHub repository"
+      >
+        GitHub
+      </a>
+      <span className="Home__statusDivider">•</span>
+      <span>Last updated Oct 2026</span>
+    </>
+  );
+
   return (
     <div className="Home">
-      <header className="Home__top">
-        <Headline title="Hi 👾 I'm Manel" />
-      </header>
-
-      <section className="Home__section Home__section--badges">
-        <div className="Home__badges">
-          <Badge
-            icon={Icons.LinkedIn}
-            text="LinkedIn"
-            url="https://www.linkedin.com/in/alcoceba/"
-            target="_blank"
-            title="Go to LinkedIn / alcoceba"
-            color="var(--linkedin-color)"
-            variant="social"
-          />
-          <Badge
-            icon={Icons.GitHub}
-            text="GitHub"
-            url="https://github.com/alcoceba/"
-            target="_blank"
-            title="Go to GitHub / alcoceba"
-            color="var(--github-color)"
-            iconColor="var(--github-icon-color)"
-            variant="social"
-          />
-          <Badge
-            icon={Icons.DailyDev}
-            text="daily.dev"
-            url="https://app.daily.dev/alcoceba/"
-            target="_blank"
-            title="Go to daily.dev / alcoceba"
-            color="var(--daily-dev-color)"
-            variant="social"
-          />
+      <section className="Home__section">
+        <div
+          className={`Home__egg${isTerminalMinimizedOrClosed ? ' Home__egg--hidden' : ''}`}
+          aria-hidden="true"
+          data-testid="easter-egg"
+        >
+          hi! 👋
         </div>
-      </section>
 
-      <section className="Home__section">
-        <p className="Home__intro">
-          I'm a <strong>Software Engineer</strong> with 14+ years of experience
-          building web applications.
-        </p>
-      </section>
+        <Terminal
+          title="manel@dev: ~"
+          statusContent={statusContent}
+          onClose={() => setIsTerminalMinimizedOrClosed(true)}
+          onMinimize={() => setIsTerminalMinimizedOrClosed(true)}
+          onRestore={() => setIsTerminalMinimizedOrClosed(false)}
+          onRelaunch={() => {
+            setIsTerminalMinimizedOrClosed(false);
+            restartSession();
+          }}
+        >
+          <header className="Home__header">
+            <ProfileCard tag="[ whoami ]" title="Hi 👾 I'm Manel">
+              <p className="Home__intro">
+                I'm a <strong>Software Engineer</strong> with 14+ years of
+                experience building web applications.
+              </p>
+            </ProfileCard>
+          </header>
 
-      <section className="Home__section">
-        <p>
-          ☕️ I'm open to connect and share ideas, or just talk about what you're
-          working on.
-        </p>
-        <p>
-          <a
-            className="Home__link"
-            href="https://www.linkedin.com/in/alcoceba/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Want to know how can I help you?"
-          >
-            Click here
-          </a>{' '}
-          to get to know me better.
-          <span className="TerminalCursor" />
-        </p>
+          <hr className="Home__divider" aria-hidden="true" />
+
+          {isInitializing && (
+            <div className="Home__spinner" aria-live="polite">
+              <span className="Home__spinnerFrame">{initSpinnerFrame}</span>
+              <span className="Home__spinnerLabel">initializing...</span>
+            </div>
+          )}
+
+          {isCatLineVisible && (
+            <div className="Home__line">
+              <TerminalPrompt />
+              <span>{catCommand.slice(0, catChars)}</span>
+              {ticks < catEnd && <span className="TerminalCursor" />}
+            </div>
+          )}
+
+          {isMessageVisible && (
+            <>
+              <div className="Home__output">{message}</div>
+
+              {isFetchLineVisible && (
+                <div className="Home__line">
+                  <TerminalPrompt />
+                  <span>{fetchCommand.slice(0, fetchChars)}</span>
+                  {!isFetchDone && <span className="TerminalCursor" />}
+                </div>
+              )}
+
+              {isSpinnerVisible && (
+                <div className="Home__spinner" aria-live="polite">
+                  <span className="Home__spinnerFrame">{spinnerFrame}</span>
+                  <span className="Home__spinnerLabel">connecting...</span>
+                </div>
+              )}
+
+              {isResultsVisible && <TerminalLinks links={DEFAULT_LINKS} />}
+
+              {isFinalPromptVisible && (
+                <div className="Home__line Home__finalPrompt">
+                  <TerminalPrompt />
+                  <span className="TerminalCursor" />
+                </div>
+              )}
+            </>
+          )}
+        </Terminal>
       </section>
     </div>
   );
